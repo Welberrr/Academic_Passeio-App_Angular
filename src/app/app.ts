@@ -2,10 +2,10 @@ import { Component, signal } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './app.html',
   standalone: false,
-  styleUrl: './app.component.scss'
+  styleUrl: './app.scss'
 })
-export class AppComponent {
+export class App {
   protected readonly title = signal('passeio-app');
 }
