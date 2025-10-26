@@ -2,7 +2,7 @@
     <h2 class="text-2x1 font-semibold text-gray-700 mb-4">Nova Categoria</h2>
     <hr>
 
-    <form id="categoriaForm">
+    <form id="categoriaForm" [formGroup]="camposForm" (ngSubmit)="salvar()">
         <div class="mb-4">
             <label class="block text-gray-600 font-medium mb-2">Nome</label>
             <input type="text" id="nome" name="nome" placeholder="Ex: Restaurantes, Praias, Shopping" class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400">
@@ -17,7 +17,9 @@
         rows="4" 
         type="text" 
         id="descricao" 
-        name="descricao" 
+        name="descricao"
+        formControlName="descricao"
+        formControlName="nome"
         placeholder="Ex: Restaurantes, Praias, Shopping" 
         class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"></textarea>
             <span class="text-red-500 text-sm">
