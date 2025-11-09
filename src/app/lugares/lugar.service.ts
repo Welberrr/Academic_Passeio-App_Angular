@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class Lugar {
-  
+export class LugarService {
+
+  constructor() { }
 }
