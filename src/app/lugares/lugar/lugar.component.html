@@ -17,6 +17,15 @@
 
         <div class="mb-4">
             <label for="nome" class="block text-gray-600 font-medium mb-2">Categoria</label>
+            <select id="categoria" 
+                    name="categoria" 
+                    formControlName="categoria"
+                    class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"
+                    required
+                    >
+                <option [value]="" disabled selected>Selecione uma categoria</option>
+                <option *ngFor="let cat of categorias" [value]="cat.id">{{ cat.nome }}</option>
+            </select>
         </div>
 
         <div class="mb-4">
@@ -44,12 +53,24 @@
         </div>
 
         <div class="mb-4">
-            <label for="nome" class="block text-gray-600 font-medium mb-2">Avaliacao</label>
+            <label for="avaliacao" class="block text-gray-600 font-medium mb-2">Avaliacao</label>
+            <select id="avaliacao" 
+                    name="avaliacao" 
+                    formControlName="avaliacao"
+                    class="w-full p-3 border border-gray-300 rounded shadow-sm focus:ring focus:ring-blue-400"
+                    required
+                    >
+                <option [value]="" disabled selected>Selecione uma avaliacao</option>
+                <option [value]="1">1 - Ruim</option>
+                <option [value]="2">2 - Regular</option>
+                <option [value]="3">3 - Bom</option>
+                <option [value]="4">4 - Muito Bom</option>
+                <option [value]="5">5 - Excelente</option>
+            </select>
         </div>
-    </form>
 
-
-    <button type="submit" class="w-full bg-blue-600 text-white font-semibold p-3 rounded shadow hover:bg-blue-700">
+            <button type="submit" class="w-full bg-blue-600 text-white font-semibold p-3 rounded shadow hover:bg-blue-700">
             Cadastrar Lugar
         </button>
+    </form>
 </div>
