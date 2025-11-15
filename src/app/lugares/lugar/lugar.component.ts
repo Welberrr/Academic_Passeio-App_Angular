@@ -46,3 +46,5 @@ export class LugarComponent implements OnInit {
     });
   }
 }
+
+//teste
