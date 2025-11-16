@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { GaleriaRoutingModule } from './galeria-routing-module';
+import { GaleriaRoutingModule } from './galeria-routing.module';
 
 
 @NgModule({
