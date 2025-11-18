@@ -12,7 +12,7 @@ import { CategoriaService } from '../categoria.service';
 export class CategoriaComponent {
   camposForm: FormGroup;
 
-  constructor(private service: CategoriaService) {
+  constructor(private service: CategoriaService){
     this.camposForm = new FormGroup({
         nome: new FormControl('', Validators.required),
         descricao: new FormControl('', Validators.required)
@@ -23,10 +23,15 @@ export class CategoriaComponent {
     this.camposForm.markAllAsTouched();
 
     if(this.camposForm.valid){
-      this.service.salvar(this.camposForm.value).subscribe(
-        categoria => {
-          this.camposForm.reset();
-      })
+      this.service
+        .salvar(this.camposForm.value)
+        .subscribe({
+          next: categoria => {
+            console.log('Salva com sucesso!', categoria);
+            this.camposForm.reset();
+          },
+          error: erro => console.error('Ocorreu um erro: ', erro)
+        });
     }
   }
 

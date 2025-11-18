@@ -1,24 +1,21 @@
-import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
-import { App } from './app.component';
-import { provideHttpClient, withFetch} from '@angular/common/http';
+import { AppComponent } from './app.component';
+import { provideHttpClient, withFetch } from '@angular/common/http'
 
 @NgModule({
   declarations: [
-    App
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    ReactiveFormsModule
+    AppRoutingModule
   ],
   providers: [
-    provideBrowserGlobalErrorListeners(),
     provideHttpClient(withFetch())
   ],
-  bootstrap: [App]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
