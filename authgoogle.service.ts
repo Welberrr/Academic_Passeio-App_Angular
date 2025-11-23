@@ -36,3 +36,8 @@ export class Authgoogle {
         this.profile.set(null);
         this.router.navigate(['']);
   }
+
+  getLoggedInProfile() {
+    return this.profile();
+  }
+}
