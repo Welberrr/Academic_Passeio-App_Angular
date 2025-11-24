@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
 import { Profile } from './profile.model';
-import { Authgoogle } from '../../../authgoogle.service';
+import { Router } from '@angular/router';
+import { AuthgoogleService } from '../authgoogle.service';
 
 @Component({
   selector: 'app-landingpage',
   standalone: false,
+  
   templateUrl: './landingpage.component.html',
   styleUrl: './landingpage.component.scss'
 })
@@ -13,7 +14,10 @@ export class LandingpageComponent {
 
   profile: Profile | undefined;
 
-  constructor(private router: Router, private loginService: Authgoogle) {}
+  constructor(
+    private router: Router, 
+    private loginService: AuthgoogleService
+  ){}
 
   navegar(){
     this.router.navigate(['/paginas/galeria']);
@@ -23,10 +27,11 @@ export class LandingpageComponent {
     this.loginService.login();
   }
 
-  isLoggedIn(){
-    const dadosGoogle = this.loginService.getLoggedInProfile();
-    console.log("Dados Google", dadosGoogle);
+  isLoggedIn() : boolean{ 
+    const dadosGoogle = this.loginService.getLoggedProfile();
+    console.log("Dados Google: ", dadosGoogle);
     this.profile = dadosGoogle;
     return !!this.profile;
   }
+
 }
