@@ -19,3 +19,5 @@ COPY --from=build /app/dist/passeio-app/browser /usr/share/nginx/html
 EXPOSE 80
 
 ENTRYPOINT nginx -g daemon off
+
+//welber
